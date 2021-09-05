@@ -1,4 +1,4 @@
-import React, {useState, createContext, useContext, Children }from 'react'
+import React, {Children }from 'react'
 import { GoogleMap, LoadScript, Polygon, Marker } from '@react-google-maps/api';
 
 import { GlobalContextProvider } from './GlobalContex';
@@ -70,13 +70,6 @@ function Map() {
     )
 
   })
-  const places = []
-
-  // const Marker = places.map( element => {
-  //   <Marker
-  //     position={{lat:element.latitude, lng:element.longitude}} 
-  //     />
-  // })
 
 
   return (
