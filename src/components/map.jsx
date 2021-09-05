@@ -1,4 +1,4 @@
-import React, { useState }from 'react'
+import React, {useState}from 'react'
 import { GoogleMap, LoadScript, Polygon, Marker } from '@react-google-maps/api';
 
 import { GlobalContextProvider } from './GlobalContex';
@@ -31,7 +31,7 @@ const options = {
 }
 
 const options_selected = {
-  fillColor: "#fff",
+  fillColor: "#1331f2",
   fillOpacity: 0.5,
   strokeColor: "#fff",
   strokeOpacity: 0.7,
@@ -71,6 +71,8 @@ function Map() {
 
   })
 
+ 
+
 
   return (
     <LoadScript
@@ -80,8 +82,13 @@ function Map() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         options={{
-          disableDefaultUI: true,
-          mapTypeId: "satellite"
+          zoomControl: false,
+      mapTypeControl: true,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false
+
         }}
         center={center}
         onClick={()=> {
@@ -90,8 +97,17 @@ function Map() {
         }}
         zoom={11.5}
       >
-        <Marker  
+        <Marker 
           position={{lat:51.23295680777698, lng:6.788697597121482}}
+          />
+          <Marker 
+          position={{lat:51.29552522029968, lng:6.7672399237266685,}}
+          />
+          <Marker 
+          position={{lat:51.23892193293264, lng: 6.740289087662114,}}
+          />
+          <Marker 
+          position={{lat:51.17277869091186,  lng:6.872811671445618,}}
           />
         {Polygons}
         <GlobalContextProvider>
